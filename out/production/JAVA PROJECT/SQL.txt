@@ -1,0 +1,55 @@
+CREATE DATABASE `inventory` ;
+USE `inventory`;
+
+CREATE TABLE `currentstock` (
+  `productcode` varchar(45),
+  `quantity` int,
+  PRIMARY KEY (`productcode`)
+) ;
+
+
+CREATE TABLE `customers` (
+  `cid` int NOT NULL AUTO_INCREMENT,
+  `customercode` varchar(45),
+  `fullname` varchar(45),
+  `location` varchar(45),
+  `phone` varchar(45),
+  PRIMARY KEY (`cid`)
+);
+
+
+CREATE TABLE `products` (
+  `pid` int NOT NULL AUTO_INCREMENT,
+  `productcode` varchar(45),
+  `productname` varchar(45),
+  `costprice` double,
+  `sellprice` double,
+  `brand` varchar(45),
+  PRIMARY KEY (`pid`),
+  UNIQUE KEY `productcode_UNIQUE` (`productcode`)
+);
+
+
+CREATE TABLE `purchaseinfo` (
+  `purchaseID` int NOT NULL AUTO_INCREMENT,
+  `suppliercode` varchar(45),
+  `productcode` varchar(45),
+  `date` varchar(45),
+  `quantity` int,
+  `totalcost` double,
+  PRIMARY KEY (`purchaseID`)
+) ;
+
+
+CREATE TABLE `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(45),
+  `location` varchar(45),
+  `phone` varchar(10),
+  `username` varchar(20),
+  `password` varchar(200),
+  `usertype` varchar(45),
+  PRIMARY KEY (`id`)
+) ;
+
+INSERT INTO `users` VALUES (20,'Admin','Local','01400152588','admin','admin','ADMINISTRATOR');
