@@ -46,7 +46,7 @@ public class ConnectionFactory {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            // Close ResultSet
+            // Close Result
             try {
                 if (resultSet != null) resultSet.close();
             } catch (SQLException e) {
